@@ -1,0 +1,120 @@
+import java.util.Scanner;
+public class countingInts
+{
+
+    public static void main(String[] args)
+    {
+        int []list = new int[10]; //establishes length of array
+
+
+        Scanner scan = new Scanner(System.in); //open scanner and or keyboard
+
+        System.out.print("Enter 10 numbers: "); //start prompt
+
+        for (int i = 0; i < list.length; i++) //initial for loop to control how many variables are entered
+        {
+            list[i] = scan.nextInt(); //fill with various integers
+
+            if ( list[i] > 50)//check if number is over 50
+            {
+                System.out.print("That exceeds 50, try again: ");
+                i = i - 1;
+
+            }//close control for loop
+
+
+        }//close main for loop
+
+        for(int num = 0; num<list.length; num++)
+        {
+            int theCount = 0;
+            int[] arraySave = new int[10];
+            int var = 0;
+
+            for(int i2 = 0; i2 < list.length; i2++)//while int is less than 10
+            {
+
+
+
+                if (list[num] == list[i2])
+                    {
+                        theCount++; 
+
+                    }
+            }//close essential for loop
+
+            System.out.println(list[num] + " was inputted " + theCount + " times.");
+
+        }//close main for loop
+
+        System.out.print("\nThe array: ");
+        for(int i = 0; i < list.length; i++)
+        {
+            System.out.print(list[i] + " ");//prints out array for clarification
+        }//close array printing for loop
+
+/*
+//start of bad soft code
+       for(int num = 0; num<list.length; num++)
+        {
+            int theCount = 0;
+            int[] arraySave = new int[10];
+            int var = 0;
+
+            for(int i2 = 0; i2 < list.length; i2++)//while int is less than 10
+            {
+                //work on this for loop=
+                arraySave[i2] = i2;
+
+                for(int num2 = 0; num2 < arraySave[i2]; num2++)//while the int is less than the list
+                {
+
+
+                    if (list[num] == list[num2])//if the value in the array is equal to the
+                    {
+
+                        theCount++;
+
+
+                    }//close count if
+
+                }//close inner for loop
+            }//close essential for loop
+
+            //start of hardcode
+        if (list[0] == list[1] && list[1] == list[2])
+    {
+        System.out.print("You've input " + list[1] +  "times!\n"); //checks if all variables are equal
+    }//close first else if
+
+    else if (list[0] == list[1] || list[0] == list[2])
+    {
+        System.out.print("You input " + list[0] + " twice "); //checks if two variables are alike
+
+    }//close second else if
+
+    else if (list[1] == list[2]) //check if these variables are the same
+    {
+        if (list[1] != 0)//prevents "you've printed 0 twice" from printing
+        {
+            System.out.print("You input " + list[2] + " twice ");
+        }//close inner if
+    }//close third else if
+
+        if(list[0] != list[1] && list[1] != list[2])//check if no numbers are the same
+        {
+            if(list[0] != list[2])//extra clarification
+            {
+                System.out.print("None of the numbers are the same right now. ");
+            }//close inner if
+        }//close fourth else if
+
+        System.out.println();
+
+ */
+
+
+    }//close void
+
+
+}//close class
